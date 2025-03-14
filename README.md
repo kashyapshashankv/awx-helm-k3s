@@ -6,7 +6,6 @@ An example implementation of AWX on single node K3s using AWX Operator, with eas
 - Accessible over HTTPS from remote host
 - All data will be stored under `/data`
 - Fixed (configurable) passwords for AWX and PostgreSQL
-- Fixed (configurable) versions of AWX
 
 **If you want to view the guide for the specific version of AWX Operator, switch the page to the desired tag instead of the `main` branch.**
 
