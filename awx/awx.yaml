@@ -1,0 +1,74 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx
+spec:
+  admin_user: admin
+  admin_password_secret: awx-admin-password
+
+  ingress_type: ingress
+  ingress_hosts:
+    - hostname: awx.example.com
+      tls_secret: awx-secret-tls
+
+  postgres_configuration_secret: awx-postgres-configuration
+
+  postgres_data_volume_init: true
+  postgres_storage_class: awx-postgres-volume
+  postgres_storage_requirements:
+    requests:
+      storage: 8Gi
+
+  projects_persistence: true
+  projects_existing_claim: awx-projects-claim
+
+  web_replicas: 1
+  task_replicas: 1
+
+  web_resource_requirements: {}
+  task_resource_requirements: {}
+  ee_resource_requirements: {}
+  init_container_resource_requirements: {}
+  postgres_resource_requirements: {}
+  redis_resource_requirements: {}
+  rsyslog_resource_requirements: {}
+
+  # web_extra_env: |
+  #   - name: LDAPTLS_REQCERT
+  #     value: never
+
+  # Uncomment to reveal "censored" logs
+  # no_log: false
+
+  # extra_volumes: |
+  #   - name: favicon
+  #     configMap:
+  #       defaultMode: 420
+  #       items:
+  #         - key: favicon.ico
+  #           path: favicon.ico
+  #   - name: logo-login
+  #     configMap:
+  #       defaultMode: 420
+  #       items:
+  #         - key: logo-login.svg
+  #           path: logo-login.svg
+  #       name: logo-login-configmap
+  #   - name: logo-header
+  #     configMap:
+  #       defaultMode: 420
+  #       items:
+  #         - key: logo-header.svg
+  #           path: logo-header.svg
+  #       name: logo-header-configmap
+  # web_extra_volume_mounts: |
+  #   - name: favicon
+  #     mountPath: /var/lib/awx/public/static/media/favicon.ico
+  #     subPath: favicon.ico
+  #   - name: logo-login
+  #     mountPath: /var/lib/awx/public/static/media/logo-login.svg
+  #     subPath: logo-login.svg
+  #   - name: logo-header
+  #     mountPath: /var/lib/awx/public/static/media/logo-header.svg
+  #     subPath: logo-header.svg
