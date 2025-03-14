@@ -27,9 +27,9 @@ An example implementation of AWX on single node K3s using AWX Operator, with eas
 
 - Tested on:
   - CentOS Stream 9 (Minimal)
-  - K3s v1.29.6+k3s2
+  - K3s
 - Products that will be deployed:
-  - AWX Operator 2.19.1
+  - AWX Operator
   - AWX 24.6.1
   - PostgreSQL 15
 
