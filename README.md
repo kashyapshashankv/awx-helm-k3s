@@ -13,7 +13,6 @@ An example implementation of AWX on single node K3s using AWX Operator, with eas
 ## 📝 Table of Contents
 
 - [📝 Environment](#-environment)
-- [📝 References](#-references)
 - [📝 Requirements](#-requirements)
 - [📝 Deployment Instruction](#-deployment-instruction)
   - [✅ Prepare CentOS Stream 9 host](#-prepare-centos-stream-9-host)
@@ -32,12 +31,6 @@ An example implementation of AWX on single node K3s using AWX Operator, with eas
   - AWX Operator
   - AWX 24.6.1
   - PostgreSQL 15
-
-## 📝 References
-
-- [K3s - Lightweight Kubernetes](https://docs.k3s.io/)
-- [INSTALL.md on ansible/awx](https://github.com/ansible/awx/blob/24.6.1/INSTALL.md) @24.6.1
-- [README.md on ansible/awx-operator](https://github.com/ansible/awx-operator/blob/2.19.1/README.md) @2.19.1
 
 ## 📝 Requirements
 
