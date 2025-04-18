@@ -139,7 +139,7 @@ Generate a Self-Signed certificate. Note that an IP address can't be specified. 
 <!-- shell: instance: generate certificates -->
 ```bash
 AWX_HOST="awx.example.com"
-openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out ./base/tls.crt -keyout ./base/tls.key -subj "/CN=${AWX_HOST}/O=${AWX_HOST}" -addext "subjectAltName = DNS:${AWX_HOST}"
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out ./awx/tls.crt -keyout ./awx/tls.key -subj "/CN=${AWX_HOST}/O=${AWX_HOST}" -addext "subjectAltName = DNS:${AWX_HOST}"
 ```
 
 Modify `hostname` in `awx/awx.yaml`.
