@@ -4,6 +4,7 @@ kind: AWX
 metadata:
   name: awx
 spec:
+  ipv6_disabled: true
   admin_user: admin
   admin_password_secret: awx-admin-password
 
